@@ -1,0 +1,38 @@
+<!-- formulario.component.html -->
+<h2>Registro de Producto</h2>
+<form>
+  <label for="nombre">Nombre:</label>
+  <input id="nombre" [(ngModel)]="nombre" name="nombre" type="text">
+
+  <label for="precio">Precio:</label>
+  <input id="precio" [(ngModel)]="precio" name="precio" type="number">
+
+  <label for="existencia">Existencia:</label>
+  <input id="existencia" [(ngModel)]="existencia" name="existencia" type="number">
+
+  <label for="fechaVencimiento">Fecha de Vencimiento:</label>
+  <input id="fechaVencimiento" [(ngModel)]="fechaVencimiento" name="fechaVencimiento" type="date">
+
+  <button (click)="agregarProducto()">Agregar Producto</button>
+</form>
+
+<!-- Tabla de productos -->
+<h2>Productos Agregados</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>Existencia</th>
+      <th>Fecha de Vencimiento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of productos">
+      <td>{{ producto.nombre }}</td>
+      <td>{{ producto.precio }}</td>
+      <td>{{ producto.existencia }}</td>
+      <td>{{ producto.fechaVencimiento }}</td>
+    </tr>
+  </tbody>
+</table>
